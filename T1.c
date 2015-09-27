@@ -13,7 +13,7 @@ main(){
 	while (tamvet<1) {
 		printf("\nEste tamanho nao %c valido, por favor digite um valor inteiro maior que 0: ", 130);
 		fflush(stdin);
-		scanf("%d", &tamvet);											//correção da entrada caso o usuario entre com um valor invalido
+		scanf("%d", &tamvet);											//correção da entrada caso o usuario entre com um valor inválido
 	}																	
 	
 	int vetor[tamvet];
@@ -42,15 +42,15 @@ main(){
 		scanf("%d", &a);
 		
 		switch(a) {															//switch para escolher função desejada
-				case 1: 
-					pmp(vetor, tamvet);
-					break;
-				case 2:
-					elun(vetor, tamvet);
-					break;
-				case 3:
-					df(vetor, tamvet);
-					break;
+			case 1: 
+				pmp(vetor, tamvet);
+				break;
+			case 2:
+				elun(vetor, tamvet);
+				break;
+			case 3:
+				df(vetor, tamvet);
+				break;
 		}
 	}
 }
@@ -61,21 +61,21 @@ void quicksort(int vetor[10], int inicio, int fim){
 	j = fim;							//reseta o valor de j para as próximas execuções
 	int meio =  (i + j) / 2;			//define o meio do vetor
 	pivo = vetor[meio];					//define como elemento correspondente a posição do meio
+	
 	while(j > i){						//enquanto a posição j for maior que a posição i para não haver intersecção e passagem
 		while (vetor[i] < pivo) i++; 	//percorre o vetor começando pelo inicio até o pivo
 		while (vetor[j] > pivo) j--;	//percorre o vetor começando pelo final até o pivo
 		      
 		if(i <= j){						//confere se i continua sendo menor ou igual a j, para garantir q não passou do pivo
-		aux3 = vetor[i];        		// faz a troca de posições
-		vetor[i] = vetor[j];			// ""
-		vetor[j] = aux3;         		// ""
-		i = i++;						//segue para o próximo elemento em i
-		j = j--;						//segue para o próximo elemento em j
+			aux3 = vetor[i];        		// faz a troca de posições
+			vetor[i] = vetor[j];			// ""
+			vetor[j] = aux3;         		// ""
+			i = i++;						//segue para o próximo elemento em i
+			j = j--;						//segue para o próximo elemento em j
 		}
 	}
 	if(inicio < j) quicksort(vetor, inicio, j); //re-executa a função com a menor parte resultante do vetor
 	if(i < fim) quicksort(vetor, i, fim);       //re-executa a função com a maior parte resultante do vetor
-
 }
 
 void pmp(int vetord[], int tamvet) { 				//função pares mais próximos (pmp)
