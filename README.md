@@ -22,7 +22,8 @@ Após a ordenação aparecerá um menu na tela perguntando o que o usuário dese
 
 Desta forma basta o usuário entrar com o número correspondente a ação que quer realizar. Caso o usuário digite um número invalido a mensagem será reimpressa.
 
-Funcionamento:
+
+Funcionamento: 
 Para realizar as ações pedidas pelo trabalho o programa teria que realizar diversos testes sobre o vetor para verificar o que foi pedido. Para simplificar o código e evitar o uso desnecessário de processamento foi usado um algorítimo de ordenação, para que os testes sejam feitos sobre um vetor já ordenado. Com um vetor ordenado pode-se realizar a analise requisitada sobre o vetor com funções de poucas linhas (em torno de 15 cada uma) e pouco processamento (um "for" que percorresse o vetor inteiro foi o suficiente para a função fazer todos os testes necessários sobre o vetor).
 Na prática, o programa após receber a entrada, imediatamente reordena o vetor pelo algorítimo quicksort e aguarda a chamada da função, que depende da entrada do usuário correspondente a um caso da função "switch". Neste caso 1 chama a função "Pares mais Próximos (pmp)", 2 chama a função "Elementos Únicos (elun)", 3 chama a função "Distribuição de Frequência (df)" e 0 sai do menu, que está em loop em uma função while. Foi utilizado a função while no menu do programa para evitar que o usuário tivesse que repetir a entrada para realizar testes diferentes sobre um mesmo vetor.
 Para o desenvolvimento do programa foi utilizado o compilador DEV C++ em Windows 8.1 Pro x64, a compilação foi gerada automaticamente pelo compilador, não houve alterações. Para o código do programa bastou a inclusão da biblioteca stdio, que forneceu todas as funções necessárias para o funcionamento. O programa não está preparado para receber entradas externas, todas as entradas devem ser feitas na execução e serão lidas pelo comando scanf.
