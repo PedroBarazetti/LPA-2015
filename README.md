@@ -5,7 +5,7 @@ Trabalho 1
 
 Aplicações de Algoritmos de Ordenação
 
-Aluno: Pedro Eduardo Rodrigues Barazetti 
+Aluno: Pedro Eduardo Rodrigues Barazetti \n
 Nº USP 9312582
 GitHub Username:PedroBarazetti
 Diretório do Trabalho: https://github.com/PedroBarazetti/Trab1-LPA2015/
