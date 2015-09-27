@@ -9,6 +9,13 @@ main(){
 	int i, tamvet, a;
 	printf("Por favor, digite o tamanho desejado para o vetor: ");
 	scanf("%d", &tamvet);												//entrada do tamanho do vetor
+	
+	while (tamvet<1) {
+		printf("\nEste tamanho nao %c valido, por favor digite um valor inteiro maior que 0: ", 130);
+		fflush(stdin);
+		scanf("%d", &tamvet);											//correção da entrada caso o usuario entre com um valor invalido
+	}																	
+	
 	int vetor[tamvet];
 	printf("\nAgora digite os elementos que compoem o vetor:\n");
 	
@@ -71,35 +78,42 @@ void quicksort(int vetor[10], int inicio, int fim){
 
 }
 
-void pmp(int vetord[], int tamvet) { 			//função pares mais próximos (pmp)
-	int i, aux, aux2;               			//variáveis auxiliares
-	int el1, el2;								//variaveis que armazenarão os par de termos
-	aux = vetord[tamvet-1] - vetord[0];         //atribuição máxima diferençca para a variavel auxiliar, para não comprometer a checagem de aux2<aux.
-	for(i=0; i < tamvet-1 ;i++) {   			//for que percorre o vetor até o penultimo termo, porque para o ultimo será usado vetord[i+1]
-		aux2 = vetord[i+1] - vetord[i];   		//atribuição da diferença entre termos a uma variavel auxiliar
+void pmp(int vetord[], int tamvet) { 				//função pares mais próximos (pmp)
+	int i, aux, aux2;               				//variáveis auxiliares
+	int el1, el2;									//variaveis que armazenarão os par de termos
+	aux = vetord[tamvet-1] - vetord[0];				//atribuição máxima diferençca para a variavel auxiliar, para não comprometer a checagem de aux2<aux.
+	
+	if(tamvet>1) {		         					//checa se o vetor tem mais de um elemento
+		for(i=0; i < tamvet-1 ;i++) {   			//for que percorre o vetor até o penultimo termo, porque para o ultimo será usado vetord[i+1]
+			aux2 = vetord[i+1] - vetord[i];   		//atribuição da diferença entre termos a uma variavel auxiliar
 		
-		if(aux2<aux) {                      	//checagem de qual diferença é menor
-			aux = aux2;                     	//se for confirmada, a diferença verificada se torna a variavel principal
-			el1 = vetord[i];                	//o primeiro elemento do par é o número menor
-			el2 = vetord[i+1];              	//o segundo elemento do par é o número maior
+			if(aux2<aux) {                      	//checagem de qual diferença é menor
+				aux = aux2;                     	//se for confirmada, a diferença verificada se torna a variavel principal
+				el1 = vetord[i];                	//o primeiro elemento do par é o número menor
+				el2 = vetord[i+1];					//o segundo elemento do par é o número maior
+			}              	
 		}
+		printf("\nO par de elementos com menor diferen%ca %c %d e %d.", 135, 130, el1, el2);
 	}
-	printf("\nO par de elementos com menor diferen%ca %c %d e %d.", 135, 130, el1, el2);
-}
+	else printf("\nNao ha um par de elementos no vetor");
+	}
 
 void elun(int vetord[], int tamvet) {
-	int i;																//variavel auxiliar para for
-	printf("\nOs seguintes elementos ocorrem uma unica vez: ");
+	int i;																	//variavel auxiliar para for
 	
-	if(vetord[0] != vetord [1]) printf("%d ", vetord[0]);				//verifica se o primeiro elemento é diferente do segundo
+	if (tamvet>1) {	
+		printf("\nOs seguintes elementos ocorrem uma unica vez: ");
+																			//verifica se o vetor tem mais de um elemento
+		if(vetord[0] != vetord [1]) printf("%d ", vetord[0]);				//verifica se o primeiro elemento é diferente do segundo
 	
-	for(i=1; i < tamvet-1 ;i++) {										
-		if( vetord[i-1] != vetord[i] && vetord[i] != vetord[1+i] ) {	//verifica se o elemento n é diferente do elemento n+1 e n-1
-			printf("%d ", vetord[i]);									
+		for(i=1; i < tamvet-1 ;i++) {										
+			if( vetord[i-1] != vetord[i] && vetord[i] != vetord[1+i] ) {	//verifica se o elemento n é diferente do elemento n+1 e n-1
+				printf("%d ", vetord[i]);									
+			}
 		}
+		if(vetord[tamvet-2] != vetord[tamvet-1]) printf("%d ", vetord[tamvet-1]); //verifica se o último elemento é diferente do penultimo
 	}
-	
-	if(vetord[tamvet-2] != vetord[tamvet-1]) printf("%d ", vetord[tamvet-1]); //verifica se o último elemento é diferente do penultimo
+	else printf("Ha ocorrencia de apenas o elemento %d", vetord[0]);
 }
 
 void df(int vetord[], int tamvet) {    
