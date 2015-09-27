@@ -3,12 +3,12 @@ SSC0300 - Linguagens de Programação e Aplicações 2015
 Prof. Adenilso da Silva Simão
 Trabalho 1
 
--- Aplicações de Algoritmos de Ordenação
+Aplicações de Algoritmos de Ordenação
 
--- Aluno: Pedro Eduardo Rodrigues Barazetti
--- Nº USP 9312582
--- GitHub Username:PedroBarazetti
--- Diretório do Trabalho: https://github.com/PedroBarazetti/Trab1-LPA2015/
+Aluno: Pedro Eduardo Rodrigues Barazetti
+Nº USP 9312582
+GitHub Username:PedroBarazetti
+Diretório do Trabalho: https://github.com/PedroBarazetti/Trab1-LPA2015/
 
 Instruções de Uso do Programa:
 Primeiramente o usuário deve inserir o número correspondente a quantidade de elementos que se deseja inserir no vetor. Em seguida basta o usuário entrar com todos os elementos para preencher o vetor, lembrando que ambas as entradas devem ser em números inteiros. Quando o usuário terminar de inserir os elementos do vetor eles serão ordenados do menor para o maior e imprimidos em tela.
