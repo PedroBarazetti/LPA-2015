@@ -1,10 +1,10 @@
 #include <stdio.h>
 
-void quicksort(int vetor[0], int inicio, int fim);  //funÁ„o de ordenÁ„o por quicksort
-void pmp(int vetord[], int tamvet);					//funÁ„o de pares mais prÛximos(PMP)
-void elun(int vetord[], int tamvet);				//funÁ„o de elementos ˙nicos (EL UN)
-void df(int vetord[], int tamvet);					//funÁ„o de distribuiÁ„o de frequencia (DF)
-													//nas funÁıes pmp, elun e df: vetord corresponde a um vetor j· ordenado para entrada e tamvet È o tamanho deste vetor
+void quicksort(int vetor[0], int inicio, int fim);  //fun√ß√£o de orden√ß√£o por quicksort
+void pmp(int vetord[], int tamvet);					//fun√ß√£o de pares mais pr√≥ximos(PMP)
+void elun(int vetord[], int tamvet);				//fun√ß√£o de elementos √∫nicos (EL UN)
+void df(int vetord[], int tamvet);					//fun√ß√£o de distribui√ß√£o de frequencia (DF)
+													//nas fun√ß√µes pmp, elun e df: vetord corresponde a um vetor j√° ordenado para entrada e tamvet √© o tamanho deste vetor
 main(){
 	int i, tamvet, a;
 	printf("Por favor, digite o tamanho desejado para o vetor: ");
@@ -13,7 +13,7 @@ main(){
 	while (tamvet<1) {
 		printf("\nEste tamanho nao %c valido, por favor digite um valor inteiro maior que 0: ", 130);
 		fflush(stdin);
-		scanf("%d", &tamvet);											//correÁ„o da entrada caso o usuario entre com um valor inv·lido
+		scanf("%d", &tamvet);											//corre√ß√£o da entrada caso o usuario entre com um valor inv√°lido
 	}																	
 	
 	int vetor[tamvet];
@@ -23,7 +23,7 @@ main(){
 		scanf("%d", &vetor[i]);											//entrada do vetor
 	}
 	
-	quicksort(vetor, 0, tamvet-1);										//execuÁ„o do quicksort de ordenamento
+	quicksort(vetor, 0, tamvet-1);										//execu√ß√£o do quicksort de ordenamento
 	printf("\nVetor ordenado:");										
 	
 	for(i=0;i<tamvet;i++) {												
@@ -41,7 +41,7 @@ main(){
 		
 		scanf("%d", &a);
 		
-		switch(a) {															//switch para escolher funÁ„o desejada
+		switch(a) {															//switch para escolher fun√ß√£o desejada
 			case 1: 
 				pmp(vetor, tamvet);
 				break;
@@ -56,41 +56,41 @@ main(){
 }
 
 void quicksort(int vetor[10], int inicio, int fim){
-	int pivo, aux3, i, j;				//vari·veis auxiliares da funÁ„o
-	i = inicio;							//reseta o valor do i para as prÛximas execuÁıes
-	j = fim;							//reseta o valor de j para as prÛximas execuÁıes
+	int pivo, aux3, i, j;				//vari√°veis auxiliares da fun√ß√£o
+	i = inicio;							//reseta o valor do i para as pr√≥ximas execu√ß√µes
+	j = fim;							//reseta o valor de j para as pr√≥ximas execu√ß√µes
 	int meio =  (i + j) / 2;			//define o meio do vetor
-	pivo = vetor[meio];					//define como elemento correspondente a posiÁ„o do meio
+	pivo = vetor[meio];					//define como elemento correspondente a posi√ß√£o do meio
 	
-	while(j > i){						//enquanto a posiÁ„o j for maior que a posiÁ„o i para n„o haver intersecÁ„o e passagem
-		while (vetor[i] < pivo) i++; 	//percorre o vetor comeÁando pelo inicio atÈ o pivo
-		while (vetor[j] > pivo) j--;	//percorre o vetor comeÁando pelo final atÈ o pivo
+	while(j > i){						//enquanto a posi√ß√£o j for maior que a posi√ß√£o i para n√£o haver intersec√ß√£o e passagem
+		while (vetor[i] < pivo) i++; 	//percorre o vetor come√ßando pelo inicio at√© o pivo
+		while (vetor[j] > pivo) j--;	//percorre o vetor come√ßando pelo final at√© o pivo
 		      
-		if(i <= j){						//confere se i continua sendo menor ou igual a j, para garantir q n„o passou do pivo
-			aux3 = vetor[i];        		// faz a troca de posiÁıes
+		if(i <= j){						//confere se i continua sendo menor ou igual a j, para garantir q n√£o passou do pivo
+			aux3 = vetor[i];        		// faz a troca de posi√ß√µes
 			vetor[i] = vetor[j];			// ""
 			vetor[j] = aux3;         		// ""
-			i = i++;						//segue para o prÛximo elemento em i
-			j = j--;						//segue para o prÛximo elemento em j
+			i = i++;						//segue para o pr√≥ximo elemento em i
+			j = j--;						//segue para o pr√≥ximo elemento em j
 		}
 	}
-	if(inicio < j) quicksort(vetor, inicio, j); //re-executa a funÁ„o com a menor parte resultante do vetor
-	if(i < fim) quicksort(vetor, i, fim);       //re-executa a funÁ„o com a maior parte resultante do vetor
+	if(inicio < j) quicksort(vetor, inicio, j); //re-executa a fun√ß√£o com a menor parte resultante do vetor
+	if(i < fim) quicksort(vetor, i, fim);       //re-executa a fun√ß√£o com a maior parte resultante do vetor
 }
 
-void pmp(int vetord[], int tamvet) { 				//funÁ„o pares mais prÛximos (pmp)
-	int i, aux, aux2;               				//vari·veis auxiliares
-	int el1, el2;									//variaveis que armazenar„o os par de termos
-	aux = vetord[tamvet-1] - vetord[0];				//atribuiÁ„o m·xima diferenÁca para a variavel auxiliar, para n„o comprometer a checagem de aux2<aux.
+void pmp(int vetord[], int tamvet) { 				//fun√ß√£o pares mais pr√≥ximos (pmp)
+	int i, aux, aux2;               				//vari√°veis auxiliares
+	int el1, el2;									//variaveis que armazenar√£o os par de termos
+	aux = vetord[tamvet-1] - vetord[0];				//atribui√ß√£o m√°xima diferen√ßca para a variavel auxiliar, para n√£o comprometer a checagem de aux2<aux.
 	
 	if(tamvet>1) {		         					//checa se o vetor tem mais de um elemento
-		for(i=0; i < tamvet-1 ;i++) {   			//for que percorre o vetor atÈ o penultimo termo, porque para o ultimo ser· usado vetord[i+1]
-			aux2 = vetord[i+1] - vetord[i];   		//atribuiÁ„o da diferenÁa entre termos a uma variavel auxiliar
+		for(i=0; i < tamvet-1 ;i++) {   			//for que percorre o vetor at√© o penultimo termo, porque para o ultimo ser√° usado vetord[i+1]
+			aux2 = vetord[i+1] - vetord[i];   		//atribui√ß√£o da diferen√ßa entre termos a uma variavel auxiliar
 		
-			if(aux2<aux) {                      	//checagem de qual diferenÁa È menor
-				aux = aux2;                     	//se for confirmada, a diferenÁa verificada se torna a variavel principal
-				el1 = vetord[i];                	//o primeiro elemento do par È o n˙mero menor
-				el2 = vetord[i+1];					//o segundo elemento do par È o n˙mero maior
+			if(aux2<aux) {                      	//checagem de qual diferen√ßa √© menor
+				aux = aux2;                     	//se for confirmada, a diferen√ßa verificada se torna a variavel principal
+				el1 = vetord[i];                	//o primeiro elemento do par √© o n√∫mero menor
+				el2 = vetord[i+1];					//o segundo elemento do par √© o n√∫mero maior
 			}              	
 		}
 		printf("\nO par de elementos com menor diferen%ca %c %d e %d.", 135, 130, el1, el2);
@@ -104,14 +104,14 @@ void elun(int vetord[], int tamvet) {
 	if (tamvet>1) {	
 		printf("\nOs seguintes elementos ocorrem uma unica vez: ");
 																			//verifica se o vetor tem mais de um elemento
-		if(vetord[0] != vetord [1]) printf("%d ", vetord[0]);				//verifica se o primeiro elemento È diferente do segundo
+		if(vetord[0] != vetord [1]) printf("%d ", vetord[0]);				//verifica se o primeiro elemento √© diferente do segundo
 	
 		for(i=1; i < tamvet-1 ;i++) {										
-			if( vetord[i-1] != vetord[i] && vetord[i] != vetord[1+i] ) {	//verifica se o elemento n È diferente do elemento n+1 e n-1
+			if( vetord[i-1] != vetord[i] && vetord[i] != vetord[1+i] ) {	//verifica se o elemento n √© diferente do elemento n+1 e n-1
 				printf("%d ", vetord[i]);									
 			}
 		}
-		if(vetord[tamvet-2] != vetord[tamvet-1]) printf("%d ", vetord[tamvet-1]); //verifica se o ˙ltimo elemento È diferente do penultimo
+		if(vetord[tamvet-2] != vetord[tamvet-1]) printf("%d ", vetord[tamvet-1]); //verifica se o √∫ltimo elemento √© diferente do penultimo
 	}
 	else printf("Ha ocorrencia de apenas o elemento %d", vetord[0]);
 }
@@ -120,19 +120,18 @@ void df(int vetord[], int tamvet) {
 	int i, j, k;
 	int v[tamvet];                                    
 	int aux2 = 0;
-	int elrp = 0;
 	int aux = 0;												//variaveis auxiliares
 	
 	for(i=0; i < tamvet-1 ;i++) {   	
-		if(vetord[i] == vetord[i+1]) aux2++;					//verifica se o elemento n È igual ao elemento n+1, se for adiciona 1 a variavel aux2  
-			else aux2 =0;										//se for diferente, zera a variavel aux 2 para recomeÁar a contagem
+		if(vetord[i] == vetord[i+1]) aux2++;					//verifica se o elemento n √© igual ao elemento n+1, se for adiciona 1 a variavel aux2  
+			else aux2 =0;										//se for diferente, zera a variavel aux 2 para recome√ßar a contagem
 		if(aux2 > aux) {										//se a variavel secundaria aux2, for maior q a variavel principal aux, 
-			aux = aux2;											//o valor de aux2 È copiado para aux
-			j=0;												//zera o j para recomeÁar a preencher o vetor de elementos repetidos
+			aux = aux2;											//o valor de aux2 √© copiado para aux
+			j=0;												//zera o j para recome√ßar a preencher o vetor de elementos repetidos
 		}
-		if(aux2==aux) {											//verifica a igualdade, n„o foi feito no if anteior para o caso de haver repetiÁıes
-			v[j] = vetord[i];									//e È atribuido o valor do elemento do vetor q se repete (vetor[i]) para a variavel elrp(elemento repetido)
-			j++;												//aumenta um j para preencher o prÛximo espaÁo na prÛxima verificaÁ„o
+		if(aux2==aux) {											//verifica a igualdade, n√£o foi feito no if anteior para o caso de haver repeti√ß√µes
+			v[j] = vetord[i];									//e √© atribuido o valor do elemento do vetor q se repete (vetor[i]) para o vetor que guarda a repeti√ß√£o (v[])
+			j++;												//aumenta um j para preencher o pr√≥ximo espa√ßo na pr√≥xima verifica√ß√£o
 		}
 	}
 	if(aux==0)  printf("\nNao ha elementos repetidos");			
