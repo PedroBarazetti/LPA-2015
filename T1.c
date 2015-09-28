@@ -63,8 +63,8 @@ void quicksort(int vetor[10], int inicio, int fim){
 	pivo = vetor[meio];					//define como elemento correspondente a posição do meio
 	
 	while(j > i){						//enquanto a posição j for maior que a posição i para não haver intersecção e passagem
-		while (vetor[i] < pivo) i++; 	//percorre o vetor começando pelo inicio até o pivo
-		while (vetor[j] > pivo) j--;	//percorre o vetor começando pelo final até o pivo
+		while (vetor[i] < pivo) i++; 		//percorre o vetor começando pelo inicio até o pivo
+		while (vetor[j] > pivo) j--;		//percorre o vetor começando pelo final até o pivo
 		      
 		if(i <= j){						//confere se i continua sendo menor ou igual a j, para garantir q não passou do pivo
 			aux3 = vetor[i];        		// faz a troca de posições
