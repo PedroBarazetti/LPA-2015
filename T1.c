@@ -117,7 +117,8 @@ void elun(int vetord[], int tamvet) {
 }
 
 void df(int vetord[], int tamvet) {    
-	int i;                                    
+	int i, j, k;
+	int v[tamvet];                                    
 	int aux2 = 0;
 	int elrp = 0;
 	int aux = 0;												//variaveis auxiliares
@@ -127,9 +128,17 @@ void df(int vetord[], int tamvet) {
 			else aux2 =0;										//se for diferente, zera a variavel aux 2 para recomeçar a contagem
 		if(aux2 > aux) {										//se a variavel secundaria aux2, for maior q a variavel principal aux, 
 			aux = aux2;											//o valor de aux2 é copiado para aux
-			elrp = vetord[i];									//e é atribuido o valor do elemento do vetor q se repete (vetor[i]) para a variavel elrp(elemento repetido)
+			j=0;												//zera o j para recomeçar a preencher o vetor de elementos repetidos
+		}
+		if(aux2==aux) {											//verifica a igualdade, não foi feito no if anteior para o caso de haver repetições
+			v[j] = vetord[i];									//e é atribuido o valor do elemento do vetor q se repete (vetor[i]) para a variavel elrp(elemento repetido)
+			j++;
 		}
 	}
 	if(aux==0)  printf("\nNao ha elementos repetidos");			
-		else 	printf("\nO elemento com maior frequencia no vetor %c: %d, este com %d ocorrencias", 130, elrp, aux+1); //printf dos resultados
+		else {
+			printf("\nElemento(s) com maior frequencia no vetor:"); //printf dos resultados
+			for(k=0;k<j;k++) printf(" %d,", v[k]);				
+			printf(" com %d ocorrencias (cada).", aux+1);
+		}
 }
