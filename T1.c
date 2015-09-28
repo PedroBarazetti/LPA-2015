@@ -132,13 +132,13 @@ void df(int vetord[], int tamvet) {
 		}
 		if(aux2==aux) {											//verifica a igualdade, não foi feito no if anteior para o caso de haver repetições
 			v[j] = vetord[i];									//e é atribuido o valor do elemento do vetor q se repete (vetor[i]) para a variavel elrp(elemento repetido)
-			j++;
+			j++;												//aumenta um j para preencher o próximo espaço na próxima verificação
 		}
 	}
 	if(aux==0)  printf("\nNao ha elementos repetidos");			
 		else {
-			printf("\nElemento(s) com maior frequencia no vetor:"); //printf dos resultados
-			for(k=0;k<j;k++) printf(" %d,", v[k]);				
-			printf(" com %d ocorrencias (cada).", aux+1);
+			printf("\nElemento(s) com maior frequencia no vetor:"); 
+			for(k=0;k<j;k++) printf(" %d,", v[k]);					
+			printf(" com %d ocorrencias (cada).", aux+1);				//printf dos resultados
 		}
 }
