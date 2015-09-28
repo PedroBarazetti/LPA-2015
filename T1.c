@@ -126,12 +126,12 @@ void df(int vetord[], int tamvet) {
 		if(vetord[i] == vetord[i+1]) aux2++;					//verifica se o elemento n é igual ao elemento n+1, se for adiciona 1 a variavel aux2  
 			else aux2 =0;										//se for diferente, zera a variavel aux 2 para recomeçar a contagem
 		if(aux2 > aux) {										//se a variavel secundaria aux2, for maior q a variavel principal aux, 
-			aux = aux2;											//o valor de aux2 é copiado para aux
-			j=0;												//zera o j para recomeçar a preencher o vetor de elementos repetidos
+			aux = aux2;										//o valor de aux2 é copiado para aux
+			j=0;											//zera o j para recomeçar a preencher o vetor de elementos repetidos
 		}
 		if(aux2==aux) {											//verifica a igualdade, não foi feito no if anteior para o caso de haver repetições
 			v[j] = vetord[i];									//e é atribuido o valor do elemento do vetor q se repete (vetor[i]) para o vetor que guarda a repetição (v[])
-			j++;												//aumenta um j para preencher o próximo espaço na próxima verificação
+			j++;											//aumenta um j para preencher o próximo espaço na próxima verificação
 		}
 	}
 	if(aux==0)  printf("\nNao ha elementos repetidos");			
